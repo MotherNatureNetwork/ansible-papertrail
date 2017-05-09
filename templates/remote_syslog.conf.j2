@@ -7,7 +7,7 @@ setuid papertrail
 chdir /var/lib/papertrail
 
 script
-  if [ -f {{ papertrail_conf }} ]; then
-    exec /opt/remote_syslog/remote_syslog -D
+  if [ -f /etc/papertrail.yml ]; then
+    exec /opt/remote_syslog/remote_syslog -D -c /etc/papertrail.yml
   fi
 end script

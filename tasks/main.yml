@@ -1,4 +1,10 @@
 ---
+
+- name: Install Papertrail config
+  template: src=templates/papertrail.yml.j2
+            dest=/etc/papertrail.yml
+  notify: Restart remote_syslog
+
 - name: Create service account for Papertrail
   user: name=papertrail
         system=yes

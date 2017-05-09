@@ -1,0 +1,18 @@
+{% if papertrail_hostname %}
+hostname: {{ papertrail_hostname }}
+{% endif %}
+
+new_file_check_interval: "{{ papertrail_newfile_interval }}"
+
+{% if papertrail_files %}
+files:
+{% for file in papertrail_files %}
+  - path: {{ file.path }}
+    tag: {{ file.tag }}
+{% endfor %}
+{% endif %}
+
+destination:
+  host: {{ papertrail_host }}
+  port: {{ papertrail_port }}
+  protocol: tls
