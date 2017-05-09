@@ -4,7 +4,8 @@ papertrail_conf: "/etc/log_files.yml"
 papertrail_files: []
 papertrail_host: ''
 papertrail_hostname: no
+papertrail_enabled: yes
 papertrail_newfile_interval: 10
 papertrail_port: 45551
 papertrail_preserve_fqdn: 'off'
-papertrail_rsyslog_enabled: true
+papertrail_rsyslog_enabled: no
